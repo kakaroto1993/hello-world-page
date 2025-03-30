@@ -1,0 +1,83 @@
+/* base.css */
+/* Reset e Estilos Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Esquema de Cores Principal */
+    --primary-color: #FF6B00;      /* Laranja vibrante */
+    --primary-dark: #CC5500;       /* Laranja escuro */
+    --secondary-color: #2D2D2D;    /* Cinza escuro quase preto */
+    --accent-color: #FFB380;       /* Laranja claro para acentos */
+    
+    /* Texto */
+    --text-color: #333333;         /* Para uso em fundos claros */
+    --text-dark: #ffffff;          /* Para uso em fundos escuros */
+    --text-light: #666666;         /* Texto secundário em fundos claros */
+    --text-light-dark: #dddddd;    /* Texto secundário em fundos escuros */
+    
+    /* Backgrounds */
+    --background: #F8F8F8;         /* Fundo principal claro */
+    --background-alt: #f5f7fa;     /* Fundo alternativo claro */
+    --background-dark: #121212;    /* Fundo principal escuro */
+    --background-dark-alt: #1e1e1e; /* Fundo alternativo escuro */
+    
+    /* Glassmorphism */
+    --glass-background: rgba(255, 255, 255, 0.25);
+    --glass-background-dark: rgba(35, 35, 35, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-border-dark: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    --glass-blur: blur(12px);
+    
+    /* Espaçamentos */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 5rem;
+
+    /* Borda */
+    --border-radius: 8px;
+
+    /* Transições */
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Modo Escuro - Ajustes Básicos */
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}

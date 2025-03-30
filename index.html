@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,15 +11,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
-  <!-- Glassmorphism CSS -->
-  <link rel="stylesheet" href="engineer-colors.css">
-  <link rel="stylesheet" href="dynamic-background-engineer.css">
-  <link rel="stylesheet" href="technical-elements.css">
-  <link rel="stylesheet" href="glassmorphism.css">
-  <link rel="stylesheet" href="dynamic-background.css">
+  
+  <!-- Nova estrutura CSS organizada -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/effects.css">
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
+
 <body>
   <!-- Barra de progresso no scroll -->
   <div class="scroll-progress-container">
@@ -62,25 +64,25 @@
     <!-- Novo Fundo Dinâmico -->
     <div class="dynamic-background"></div>
     <div class="container">
-        <div class="hero-content glass-card">
-            <h1 class="hero-title">Daniel Alves</h1>
-            <h2 class="hero-subtitle">
-                <span id="typing-text"></span>
-                <span class="cursor">|</span>
-            </h2>
-            <p class="hero-description">Especialista em automações com IA</p>
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary btn-glass">Entre em contato</a>
-                <a href="#about" class="btn btn-secondary">Saiba mais</a>
-            </div>
+      <div class="hero-content glass-card">
+        <h1 class="hero-title">Daniel Alves</h1>
+        <h2 class="hero-subtitle">
+          <span id="typing-text"></span>
+          <span class="cursor">|</span>
+        </h2>
+        <p class="hero-description">Especialista em automações com IA</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary btn-glass">Entre em contato</a>
+          <a href="#about" class="btn btn-secondary">Saiba mais</a>
         </div>
-        <div class="hero-image">
-            <div class="profile-shape">
-                <img src="profile.jpg" alt="Daniel Alves - Engenheiro Civil" class="profile-image">
-            </div>
+      </div>
+      <div class="hero-image">
+        <div class="profile-shape">
+          <img src="profile.jpg" alt="Daniel Alves - Engenheiro Civil" class="profile-image">
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
   <!-- Seção Sobre -->
   <section id="about" class="about">
@@ -235,7 +237,9 @@
       <div class="projects-grid">
         <div class="project-item tilt-card glass-card" data-category="automation">
           <div class="project-img">
-            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Projeto de Automação">
+            <img
+              src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+              alt="Projeto de Automação">
             <div class="project-overlay">
               <div class="project-info">
                 <h4>Sistema de Automação Predial</h4>
@@ -295,106 +299,108 @@
     </div>
   </section>
 
-    <!-- Simulador de Economia com IA -->
-    <section id="economy" class="economy">
-        <div class="container">
-            <div class="section-header">
-                <h2>Simulador de Economia com IA</h2>
-                <div class="section-line"></div>
-            </div>
-            <div class="economy-content">
-                <div class="economy-simulator fade-in glass-card" data-animation="zoom-in">
-                    <div class="economy-intro">
-                        <h3>Descubra quanto você pode economizar</h3>
-                        <p>A automação com IA pode reduzir custos e aumentar a eficiência nos seus projetos de construção civil. Simule agora mesmo o potencial de economia!</p>
+  <!-- Simulador de Economia com IA -->
+  <section id="economy" class="economy">
+    <div class="container">
+      <div class="section-header">
+        <h2>Simulador de Economia com IA</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="economy-content">
+        <div class="economy-simulator fade-in glass-card" data-animation="zoom-in">
+          <div class="economy-intro">
+            <h3>Descubra quanto você pode economizar</h3>
+            <p>A automação com IA pode reduzir custos e aumentar a eficiência nos seus projetos de construção civil.
+              Simule agora mesmo o potencial de economia!</p>
+          </div>
+
+          <div class="economy-simulator-container">
+            <div class="simulator-controls">
+              <form id="economyForm" class="glass-card">
+                <div class="form-group slider-group">
+                  <label for="projectValue">Valor do Projeto (R$)</label>
+                  <div class="slider-container">
+                    <input type="range" id="projectValueSlider" min="50000" max="10000000" step="50000" value="500000">
+                    <div class="value-display">
+                      <input type="number" id="projectValue" name="projectValue" value="500000" min="50000"
+                        max="10000000">
                     </div>
-                    
-                    <div class="economy-simulator-container">
-                        <div class="simulator-controls">
-                            <form id="economyForm" class="glass-card">
-                                <div class="form-group slider-group">
-                                    <label for="projectValue">Valor do Projeto (R$)</label>
-                                    <div class="slider-container">
-                                        <input type="range" id="projectValueSlider" min="50000" max="10000000" step="50000" value="500000">
-                                        <div class="value-display">
-                                            <input type="number" id="projectValue" name="projectValue" value="500000" min="50000" max="10000000">
-                                        </div>
-                                    </div>
-                                    <div class="slider-markers">
-                                        <span>R$ 50 mil</span>
-                                        <span>R$ 10 milhões</span>
-                                    </div>
-                                    <span class="error-message" id="projectValue-error"></span>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label for="automationLevel">Nível de Automação Desejado</label>
-                                    <div class="automation-options">
-                                        <div class="automation-option">
-                                            <input type="radio" id="automationLow" name="automationLevel" value="low" checked>
-                                            <label for="automationLow">
-                                                <i class="fas fa-robot"></i>
-                                                <span>Básico</span>
-                                                <small>Automações simples</small>
-                                            </label>
-                                        </div>
-                                        <div class="automation-option">
-                                            <input type="radio" id="automationMedium" name="automationLevel" value="medium">
-                                            <label for="automationMedium">
-                                                <i class="fas fa-robot"></i><i class="fas fa-robot small"></i>
-                                                <span>Intermediário</span>
-                                                <small>Automações avançadas</small>
-                                            </label>
-                                        </div>
-                                        <div class="automation-option">
-                                            <input type="radio" id="automationHigh" name="automationLevel" value="high">
-                                            <label for="automationHigh">
-                                                <i class="fas fa-robot"></i><i class="fas fa-robot"></i><i class="fas fa-robot"></i>
-                                                <span>Completo</span>
-                                                <small>IA integrada total</small>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <button type="submit" class="btn btn-primary btn-glass simulator-submit">
-                                    <i class="fas fa-calculator"></i> Calcular Economia
-                                </button>
-                            </form>
-                        </div>
-                        
-                        <div class="simulator-results glass-card">
-                            <div class="chart-container">
-                                <canvas id="economyChart"></canvas>
-                                <div class="chart-placeholder">
-                                    <i class="fas fa-chart-bar"></i>
-                                    <p>O gráfico será exibido após o cálculo</p>
-                                </div>
-                            </div>
-                            
-                            <div id="economyResult" class="economy-result">
-                                <div class="economy-metrics">
-                                    <div class="metric">
-                                        <h4>Economia Estimada</h4>
-                                        <span class="metric-value" id="savingsValue">--</span>
-                                    </div>
-                                    <div class="metric">
-                                        <h4>ROI Estimado</h4>
-                                        <span class="metric-value" id="roiValue">--</span>
-                                    </div>
-                                    <div class="metric">
-                                        <h4>Tempo de Implementação</h4>
-                                        <span class="metric-value" id="timeValue">--</span>
-                                    </div>
-                                </div>
-                                <div id="economyAnalysis" class="economy-analysis"></div>
-                            </div>
-                        </div>
-                    </div>
+                  </div>
+                  <div class="slider-markers">
+                    <span>R$ 50 mil</span>
+                    <span>R$ 10 milhões</span>
+                  </div>
+                  <span class="error-message" id="projectValue-error"></span>
                 </div>
+
+                <div class="form-group">
+                  <label for="automationLevel">Nível de Automação Desejado</label>
+                  <div class="automation-options">
+                    <div class="automation-option">
+                      <input type="radio" id="automationLow" name="automationLevel" value="low" checked>
+                      <label for="automationLow">
+                        <i class="fas fa-robot"></i>
+                        <span>Básico</span>
+                        <small>Automações simples</small>
+                      </label>
+                    </div>
+                    <div class="automation-option">
+                      <input type="radio" id="automationMedium" name="automationLevel" value="medium">
+                      <label for="automationMedium">
+                        <i class="fas fa-robot"></i><i class="fas fa-robot small"></i>
+                        <span>Intermediário</span>
+                        <small>Automações avançadas</small>
+                      </label>
+                    </div>
+                    <div class="automation-option">
+                      <input type="radio" id="automationHigh" name="automationLevel" value="high">
+                      <label for="automationHigh">
+                        <i class="fas fa-robot"></i><i class="fas fa-robot"></i><i class="fas fa-robot"></i>
+                        <span>Completo</span>
+                        <small>IA integrada total</small>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-glass simulator-submit">
+                  <i class="fas fa-calculator"></i> Calcular Economia
+                </button>
+              </form>
             </div>
+
+            <div class="simulator-results glass-card">
+              <div class="chart-container">
+                <canvas id="economyChart"></canvas>
+                <div class="chart-placeholder">
+                  <i class="fas fa-chart-bar"></i>
+                  <p>O gráfico será exibido após o cálculo</p>
+                </div>
+              </div>
+
+              <div id="economyResult" class="economy-result">
+                <div class="economy-metrics">
+                  <div class="metric">
+                    <h4>Economia Estimada</h4>
+                    <span class="metric-value" id="savingsValue">--</span>
+                  </div>
+                  <div class="metric">
+                    <h4>ROI Estimado</h4>
+                    <span class="metric-value" id="roiValue">--</span>
+                  </div>
+                  <div class="metric">
+                    <h4>Tempo de Implementação</h4>
+                    <span class="metric-value" id="timeValue">--</span>
+                  </div>
+                </div>
+                <div id="economyAnalysis" class="economy-analysis"></div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
   <!-- Seção Contato -->
   <section id="contact" class="contact">
@@ -487,12 +493,12 @@
 
   <!-- Chart.js para gráficos -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  
+
   <!-- External JS -->
   <script src="script.js"></script>
   <!-- Glassmorphism JS -->
   <script src="glassmorphism.js"></script>
-  
+
   <!-- Assistente de Chat Moderno (substitui o Clippy) -->
   <div id="chat-assistant" class="glass-card">
     <div class="chat-icon">
@@ -513,4 +519,5 @@
     </div>
   </div>
 </body>
+
 </html>

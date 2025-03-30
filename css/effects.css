@@ -1,0 +1,302 @@
+/* effects.css */
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efeito de digitação */
+.typing-done {
+    border-right: 2px solid var(--primary-color);
+    animation: blink-border 0.7s infinite;
+    padding-right: 5px;
+}
+
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: var(--primary-color);
+    animation: blink-opacity 1s infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink-border {
+    0%, 100% { border-right-color: transparent; }
+    50% { border-right-color: var(--primary-color); }
+}
+
+@keyframes blink-opacity {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Fundo de Partículas */
+.particle-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(255, 107, 0, 0.2);
+    animation: float 15s infinite ease-in-out;
+    pointer-events: none;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    25% { transform: translateY(-30px) translateX(15px); }
+    50% { transform: translateY(-15px) translateX(-15px); }
+    75% { transform: translateY(30px) translateX(5px); }
+}
+
+/* Fundo Dinâmico */
+.dynamic-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.dynamic-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(40deg, 
+        rgba(18, 18, 18, 0.05),
+        rgba(255, 107, 0, 0.1),
+        rgba(255, 179, 128, 0.05),
+        rgba(45, 45, 45, 0.05));
+    filter: blur(40px);
+    opacity: 0.7;
+    transform-origin: center;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+.dynamic-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 70% 30%, 
+        rgba(255, 107, 0, 0.1) 0%, 
+        rgba(45, 45, 45, 0.05) 40%, 
+        transparent 70%);
+    filter: blur(40px);
+    opacity: 0.6;
+    animation: pulseAnimation 10s ease-in-out infinite alternate;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.1);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes pulseAnimation {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(1.05);
+    }
+}
+
+/* Efeito Parallax */
+.parallax-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    transform: translateY(0);
+    z-index: -1;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 1;
+    padding: 100px 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: var(--border-radius);
+}
+
+/* Animações de entrada específicas */
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.5); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s forwards;
+    opacity: 0;
+}
+
+.slide-in-right {
+    animation: slideInRight 1s forwards;
+    opacity: 0;
+}
+
+.zoom-in {
+    animation: zoomIn 1s forwards;
+    opacity: 0;
+}
+
+/* Efeito Tilt para cartões */
+.tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.tilt-card-inner {
+    transform: translateZ(20px);
+    transition: transform 0.5s ease;
+}
+
+/* Ajustes para modo escuro */
+body.dark-mode .particle {
+    background-color: rgba(255, 107, 0, 0.15);
+}
+
+body.dark-mode .dynamic-background::before {
+    background: linear-gradient(40deg, 
+        rgba(18, 18, 18, 0.5),
+        rgba(204, 85, 0, 0.2),
+        rgba(45, 45, 45, 0.2),
+        rgba(18, 18, 18, 0.5));
+}
+
+body.dark-mode .dynamic-background::after {
+    background: radial-gradient(
+        circle at 70% 30%, 
+        rgba(255, 107, 0, 0.15) 0%, 
+        rgba(18, 18, 18, 0.3) 50%, 
+        transparent 70%);
+}
+
+body.dark-mode .parallax-content {
+    background-color: rgba(30, 30, 30, 0.85);
+}
+
+/* Efeitos técnicos - detalhes de engenharia */
+.glass-card::before,
+.glass-card::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.glass-card::before {
+    top: 10px;
+    right: 10px;
+    border-top: 2px solid var(--primary-color);
+    border-right: 2px solid var(--primary-color);
+}
+
+.glass-card::after {
+    bottom: 10px;
+    left: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    border-left: 2px solid var(--primary-color);
+}
+
+.glass-card:hover::before,
+.glass-card:hover::after {
+    opacity: 0.8;
+}
+
+/* Efeito blueprint para estatísticas */
+.stats-section {
+    position: relative;
+}
+
+.stats-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      linear-gradient(0deg, transparent 9px, rgba(255, 107, 0, 0.05) 10px),
+      linear-gradient(90deg, transparent 9px, rgba(255, 107, 0, 0.05) 10px);
+    background-size: 10px 10px;
+    pointer-events: none;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+/* Decoração técnica para cabeçalhos de seção */
+.section-header::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: var(--primary-color);
+    border-radius: 2px;
+    opacity: 0.7;
+}

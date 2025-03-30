@@ -1,0 +1,250 @@
+/* theme.css */
+/* Tema de Engenharia - Modo Claro */
+body {
+    background-color: var(--background);
+    background-image: 
+        linear-gradient(rgba(255, 107, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 0, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Cores dos elementos principais */
+.btn-primary, 
+.social-link, 
+.skill-progress, 
+.scroll-progress-bar,
+.dot.active {
+    background-color: var(--primary-color);
+}
+
+.btn-primary:hover, 
+.social-link:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.logo h1, 
+.nav-link:hover, 
+.nav-link::after,
+.cursor,
+.testimonial-prev, 
+.testimonial-next,
+input:checked + .slider,
+.metric-value {
+    color: var(--primary-color);
+}
+
+.section-line {
+    background-color: var(--primary-color);
+}
+
+/* Estatísticas e cards com estilo técnico */
+.stats-section {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.project-overlay {
+    background: rgba(255, 107, 0, 0.9);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background-color: var(--background-alt);
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 0;
+}
+
+.profile-shape {
+    background-color: var(--primary-color);
+}
+
+.profile-shape::before {
+    border: 2px dashed var(--primary-color);
+}
+
+/* Tema de Engenharia - Modo Escuro */
+body.dark-mode {
+    background-color: var(--background-dark);
+    background-image: 
+        linear-gradient(rgba(255, 107, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 107, 0, 0.05) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+body.dark-mode header,
+body.dark-mode .hero,
+body.dark-mode .skills,
+body.dark-mode .projects {
+    background-color: var(--background-dark);
+}
+
+body.dark-mode .about,
+body.dark-mode .contact,
+body.dark-mode .testimonials,
+body.dark-mode .economy {
+    background-color: var(--background-dark-alt);
+}
+
+body.dark-mode .hero::before {
+    background-color: var(--background-dark-alt);
+}
+
+body.dark-mode .glass-card::before,
+body.dark-mode .glass-card::after {
+    border-color: var(--primary-color);
+    opacity: 0.3;
+}
+
+body.dark-mode .section-header::before {
+    background: var(--primary-color);
+    opacity: 0.8;
+}
+
+body.dark-mode .stats-section::before {
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(255, 107, 0, 0.15) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(255, 107, 0, 0.15) 20px);
+}
+
+/* Temas específicos para componentes */
+/* Simulador de Economia */
+.economy-simulator {
+    background: rgba(248, 248, 248, 0.7);
+}
+
+body.dark-mode .economy-simulator {
+    background: rgba(30, 30, 30, 0.8);
+}
+
+.simulator-controls, .simulator-results {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+body.dark-mode .simulator-controls, 
+body.dark-mode .simulator-results {
+    background: rgba(40, 40, 40, 0.7);
+}
+
+/* Modal Criativo */
+.creative-modal {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.creative-modal-content {
+    background: var(--glass-background);
+}
+
+body.dark-mode .creative-modal-content {
+    background: var(--glass-background-dark);
+}
+
+/* Assistente de Chat */
+#chat-assistant {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.chat-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.chat-icon i {
+    color: white;
+    font-size: 24px;
+}
+
+#chat-window {
+    position: absolute;
+    bottom: 70px;
+    right: 0;
+    width: 300px;
+    background: var(--glass-background);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+
+body.dark-mode #chat-window {
+    background: var(--glass-background-dark);
+}
+
+.chat-header {
+    padding: 15px;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chat-messages {
+    padding: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.chat-bubble {
+    background: var(--primary-color);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 15px 15px 15px 0;
+    margin-bottom: 10px;
+    max-width: 80%;
+}
+
+.user-bubble {
+    background: #e0e0e0;
+    color: #333;
+    border-radius: 15px 15px 0 15px;
+    margin-left: auto;
+}
+
+body.dark-mode .user-bubble {
+    background: #444;
+    color: white;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+}
+
+.chat-input button {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+}

@@ -312,3 +312,36 @@
     position: relative;
     z-index: 1;
   }
+  
+/* Correções de contraste para modo escuro */
+body.dark-mode {
+  --dark-text-color: #ffffff; /* Texto mais claro */
+  --dark-text-light: #dddddd; /* Texto secundário mais claro */
+}
+
+body.dark-mode .glass-card {
+  background: rgba(30, 30, 30, 0.8); /* Fundo mais escuro para melhor contraste */
+}
+
+body.dark-mode .hero-content,
+body.dark-mode .skills-text,
+body.dark-mode .economy-simulator,
+body.dark-mode .contact-info,
+body.dark-mode #contactForm,
+body.dark-mode .creative-modal-content {
+  color: #ffffff;
+}
+
+/* Melhorar contraste em formulários no modo escuro */
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+  background-color: rgba(45, 45, 45, 0.8);
+  color: #ffffff;
+  border-color: rgba(255, 107, 0, 0.3);
+}
+
+/* Melhorar contraste em botões no modo escuro */
+body.dark-mode .btn-glass {
+  background: rgba(255, 107, 0, 0.3);
+  color: #ffffff;
+}
